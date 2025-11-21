@@ -556,7 +556,7 @@ This makes it suitable as an operator-facing tool in environments where SSH-base
 
 ---
 
-# 11. Authoritative Academic and International Sources for HMI / IUM Guidelines
+# 11. Sources for HMI / IUM Guidelines
 
 The design principles applied in this script are based on internationally recognized standards and academic references in Human–Machine Interaction (HMI), Human–Computer Interaction (HCI), and usability engineering.
 
