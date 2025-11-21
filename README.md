@@ -1,5 +1,5 @@
 # SSH Tunnel Config Editor
-![SSH Tunnel Config Editor](https://github.com/michele-tn/SSH-appSettings-Configurator/blob/6e26cf06d3c03baa461295d6c094d49a89109107/SSH%20Tunnel%20Config%20Editor.jpg)
+![SSH Tunnel Config Editor](https://github.com/michele-tn/SSH-appSettings-Configurator/blob/76c293aea36877d88271e88a34d4e58816b4f45a/SSH%20Tunnel%20Config%20Editor.jpg)
 
 ## 1. Purpose and scope
 
