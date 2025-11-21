@@ -1,4 +1,4 @@
-﻿param(
+param(
     [string]$ConfigPath
 )
 
@@ -61,9 +61,13 @@ function Set-AppSettingValue {
     }
 }
 
+# ---------- FIX: make tunnels collection always dynamic ----------
 function Parse-Tunnels {
     $value = Get-AppSettingValue -Key "Tunnels"
-    $list  = New-Object System.Collections.ObjectModel.ObservableCollection[object]
+
+    # Always use a dynamic .NET list
+    $list = New-Object System.Collections.Generic.List[object]
+
     if ([string]::IsNullOrWhiteSpace($value)) { return $list }
 
     $entries = $value.Split(",",[System.StringSplitOptions]::RemoveEmptyEntries)
@@ -76,11 +80,12 @@ function Parse-Tunnels {
                 LocalHost  = $parts[2]
                 LocalPort  = [int]$parts[3]
             }
-            $list.Add($obj)
+            [void]$list.Add($obj)
         }
     }
     return $list
 }
+# ---------------------------------------------------------------
 
 function Serialize-Tunnels {
     param([System.Collections.IEnumerable]$Tunnels)
@@ -372,6 +377,15 @@ $txtHeartbeat.Text  = Get-AppSettingValue -Key "HeartbeatIntervalMs"
 # Tunnels in memory
 $global:TunnelsList = Parse-Tunnels
 
+# Ensure the tunnels collection is always a dynamic List[object]
+if ($global:TunnelsList -isnot [System.Collections.Generic.List[object]]) {
+    $fixedList = New-Object System.Collections.Generic.List[object]
+    foreach ($item in $global:TunnelsList) {
+        [void]$fixedList.Add($item)
+    }
+    $global:TunnelsList = $fixedList
+}
+
 function Refresh-TunnelsListBox {
     $lstTunnels.Items.Clear()
     $index = 0
@@ -529,4 +543,3 @@ $btnClose.Add_Click({
 
 # Show window
 $null = $window.ShowDialog()
-
