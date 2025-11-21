@@ -348,6 +348,11 @@ $txtMaxTunnels   = $window.FindName("txtMaxTunnels")
 $txtHeartbeat    = $window.FindName("txtHeartbeat")
 $lstTunnels      = $window.FindName("lstTunnels")
 $txtRemoteHost   = $window.FindName("txtRemoteHost")
+
+$txtRemoteHost.IsEnabled = $false
+# or:
+# $txtRemoteHost.IsReadOnly = $true
+
 $txtRemotePort   = $window.FindName("txtRemotePort")
 $txtLocalHost    = $window.FindName("txtLocalHost")
 $txtLocalPort    = $window.FindName("txtLocalPort")
@@ -524,3 +529,4 @@ $btnClose.Add_Click({
 
 # Show window
 $null = $window.ShowDialog()
+
