@@ -1,8 +1,9 @@
-# SSH Tunnel Config Editor (`SSH_Tunnel_Config_Editor.ps1`)
+# SSH Tunnel Config Editor
+![SSH Tunnel Config Editor](https://github.com/michele-tn/SSH-appSettings-Configurator/blob/6e26cf06d3c03baa461295d6c094d49a89109107/SSH%20Tunnel%20Config%20Editor.jpg)
 
 ## 1. Purpose and scope
 
-This PowerShell script provides a graphical **SSH tunnel configuration editor** for a Windows service or application whose settings are stored in an XML/`.config` file (typically a .NET `app.config`/`web.config`).
+This PowerShell script provides a graphical <a href="https://github.com/michele-tn/SSH-appSettings-Configurator/blob/main/SSH_Tunnel_Config_Editor.ps1">**`SSH tunnel configuration editor`**</a> for a Windows service or application whose settings are stored in an XML/`.config` file (typically a .NET `app.config`/`web.config`).
 
 The script:
 
